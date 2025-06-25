@@ -9,3 +9,7 @@ app.use(express.json());
 app.get('/', (res,req)=>{
     req.send('job is fallen from the sky')
 })
+
+app.listen(port, ()=>{
+    console.log(port)
+})
