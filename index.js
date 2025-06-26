@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (res,req)=>{
-    res.send('job is fallen from the sky')
+    req.send('job is fallen from the sky')
 })
 
 
