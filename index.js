@@ -33,9 +33,16 @@ async function run() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
     const postCollections = client.db('wishperWall').collection('wishpers');
+    const voteCollections = client.db('wishperWall').collection('vote');
 
     app.get('/posts', async(req,res)=>{
       const cursor = postCollections.find();
+      const result = await cursor.toArray();
+      res.send(result)
+    })
+
+    app.get('/votes', async(req,res)=>{
+      const cursor = voteCollections.find();
       const result = await cursor.toArray();
       res.send(result)
     })
