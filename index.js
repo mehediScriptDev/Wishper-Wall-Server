@@ -42,7 +42,8 @@ async function run() {
     })
     app.post('/posts',async(req,res)=>{
       const post = req.body;
-      console.log(post)
+      const result = await postCollections.insertOne(post);
+      res.send(result)
     })
 
     app.get('/votes', async(req,res)=>{
