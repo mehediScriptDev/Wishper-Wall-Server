@@ -40,6 +40,10 @@ async function run() {
       const result = await cursor.toArray();
       res.send(result)
     })
+    app.post('/posts',async(req,res)=>{
+      const post = req.body;
+      console.log(post)
+    })
 
     app.get('/votes', async(req,res)=>{
       const cursor = voteCollections.find();
