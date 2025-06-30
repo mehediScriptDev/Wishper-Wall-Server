@@ -51,6 +51,11 @@ async function run() {
       const result = await cursor.toArray();
       res.send(result)
     })
+    app.post('/votes', async(req,res)=>{
+      const vote = req.body;
+      
+      console.log(vote)
+    })
 
   } finally {
     // Ensures that the client will close when you finish/error
